@@ -1,4 +1,4 @@
-import Logger from "../../Classes/Logger";
+import Logger from "../Classes/Logger";
 
 describe('Logger', () => {
 	let logger: Logger;

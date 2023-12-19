@@ -1,4 +1,4 @@
-import BugShieldError from "../../Classes/BugShieldError";
+import BugShieldError from "../Classes/BugShieldError";
 
 describe('BugShieldError', () => {
     it('should create an instance of BugShieldError', () => {

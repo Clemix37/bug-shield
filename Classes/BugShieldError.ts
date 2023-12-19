@@ -1,6 +1,6 @@
 import IBugShieldError from "../Interfaces/IBugShieldError";
 
-export default class BugShieldError extends Error implements IBugShieldError{
+export default class BugShieldError extends Error implements IBugShieldError {
     name: string;
     code?: string | number;
     context?: Record<string, any>;

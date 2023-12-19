@@ -1,5 +1,6 @@
-import BugShield from "../../Classes/BugShield";
-import IBugShieldConfig from "../../Interfaces/IBugShieldConfig";
+import BugShield from "../Classes/BugShield";
+import BugShieldError from "../Classes/BugShieldError";
+import IBugShieldConfig from "../Interfaces/IBugShieldConfig";
 
 describe('BugShield', () => {
   let bugShield: BugShield;
@@ -27,7 +28,8 @@ describe('BugShield', () => {
 
   it('should create a custom error', () => {
     const error = bugShield.createError('CustomError', 'This is a custom error', '123');
-    
+
+    expect(error).toBeInstanceOf(BugShieldError);
     expect(error).toHaveProperty('name', 'CustomError');
     expect(error).toHaveProperty('message', 'This is a custom error');
     expect(error).toHaveProperty('code', '123');

@@ -1,23 +1,20 @@
 export default class Logger implements ILogger {
+
+	//#region Properties
+
 	private moduleName: string;
+
+	//#endregion
+
+	//#region Constructor
 
 	constructor(moduleName: string) {
 		this.moduleName = moduleName;
 	}
 
-	private displayLog(
-		level: string,
-		message: string,
-		context?: Record<string, any>
-	): void {
-		const timestamp = new Date().toISOString();
-		const logMessage = `🔎 [${timestamp}] [${level.toUpperCase()}] [${
-		this.moduleName
-		}] ${message}`;
+	//#endregion
 
-		// You can customize how log messages are handled here, e.g., sending to console, a file, or a remote service.
-		console.log(logMessage, context);
-	}
+	//#region Public Methods
 
 	public log(message: string, context?: Record<string, any>): void {
 		this.displayLog("info", message, context);
@@ -42,4 +39,25 @@ export default class Logger implements ILogger {
 	public critical(message: string, context?: Record<string, any>): void {
 		this.displayLog("critical", message, context);
 	}
+
+	//#endregion
+
+	//#region Private Methods
+
+	private displayLog(
+		level: string,
+		message: string,
+		context?: Record<string, any>
+	): void {
+		const timestamp = new Date().toISOString();
+		const logMessage = `🔎 [${timestamp}] [${level.toUpperCase()}] [${
+		this.moduleName
+		}] ${message}`;
+
+		// You can customize how log messages are handled here, e.g., sending to console, a file, or a remote service.
+		console.log(logMessage, context);
+	}
+
+	//#endregion
+
 }

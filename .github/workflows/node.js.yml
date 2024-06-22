@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm i jest
+    - run: npm ci # runs a clean install on automated environments 
     - run: npm test

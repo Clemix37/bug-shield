@@ -7,4 +7,4 @@ export default interface IBugShieldError extends Error {
     stack?: string; // Stack trace (optional)
     code?: string | number; // Custom error code (optional)
     context?: Record<string, any>; // Additional context information (optional)
-};
+}
